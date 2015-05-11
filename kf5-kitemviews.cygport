@@ -1,0 +1,25 @@
+inherit kf5
+
+NAME="kf5-kitemviews"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 item views library"
+DESCRIPTION="KItemViews includes a set of views, which can be used with item
+models. It includes views for categorizing lists and to add search filters to
+flat and hierarchical lists."
+
+PKG_NAMES="libKF5ItemViews5 libKF5ItemViews-devel"
+libKF5ItemViews5_CONTENTS="
+	usr/bin/cygKF5ItemViews-5.dll
+	usr/share/doc/
+	usr/share/locale/
+"
+libKF5ItemViews_devel_REQUIRES="libQt5Core-devel libQt5Gui-devel"
+libKF5ItemViews_devel_CONTENTS="
+	usr/include/KF5/KItemViews/
+	usr/include/KF5/kitemviews_version.h
+	usr/lib/cmake/KF5ItemViews/
+	${QT5_MKSPECSDIR#/}/modules/qt_KItemViews.pri
+	usr/lib/libKF5ItemViews.dll.a
+"
