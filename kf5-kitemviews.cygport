@@ -1,7 +1,7 @@
-inherit kf5
+inherit kf5 python2 python3
 
 NAME="kf5-kitemviews"
-VERSION=5.27.0
+VERSION=5.35.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="KDE 5 item views library"
@@ -9,7 +9,7 @@ DESCRIPTION="KItemViews includes a set of views, which can be used with item
 models. It includes views for categorizing lists and to add search filters to
 flat and hierarchical lists."
 
-PKG_NAMES="libKF5ItemViews5 libKF5ItemViews-devel"
+PKG_NAMES="libKF5ItemViews5 libKF5ItemViews-devel python2-pykf5-kitemviews python3-pykf5-kitemviews"
 libKF5ItemViews5_CONTENTS="
 	usr/bin/cygKF5ItemViews-5.dll
 	usr/share/doc/
@@ -22,4 +22,7 @@ libKF5ItemViews_devel_CONTENTS="
 	usr/lib/cmake/KF5ItemViews/
 	${QT5_MKSPECSDIR#/}/modules/qt_KItemViews.pri
 	usr/lib/libKF5ItemViews.dll.a
+	usr/share/sip/PyKF5/KItemViews/
 "
+python2_pykf5_kitemviews_CONTENTS="${PYTHON2_SITELIB#/}/PyKF5/KItemViews.dll"
+python3_pykf5_kitemviews_CONTENTS="${PYTHON3_SITELIB#/}/PyKF5/KItemViews.dll"
